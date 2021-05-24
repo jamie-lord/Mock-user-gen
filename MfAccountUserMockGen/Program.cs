@@ -16,7 +16,7 @@ namespace MfAccountUserMockGen
             var users = new List<User>();
 
             var faker = new Faker<User>()
-                .RuleFor(u => u.Email, s => s.Person.Email)
+                .RuleFor(u => u.Email, s => $"{Guid.NewGuid()}-{s.Person.Email}")
                 .RuleFor(u => u.FirstName, s => s.Person.FirstName)
                 .RuleFor(u => u.Surname, s => s.Person.LastName)
                 .RuleFor(u => u.ContactNumber, s => s.Person.Phone)
